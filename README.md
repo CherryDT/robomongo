@@ -16,6 +16,8 @@ I did _not_ fully rebuild the project because it was too much of a hassle, inste
 
 Cheers!
 
+_Note: There is another error with new MongoDB servers: Upon any action such as inserting, updating or deleting, you get an error `GetLastError command failed: getLastError command is not supported` even though the command succeeded, and if it didn't succeed, you might not know. This fork does **not** solve that problem but at least for me it is a less pressing issue._
+
 ---
 
 ## Important
