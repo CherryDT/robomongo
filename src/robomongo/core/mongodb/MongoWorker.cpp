@@ -577,11 +577,11 @@ namespace Robomongo
         try {
             executeQuery();
         } catch(const std::exception &ex) {
-            QString const NTORETURN_ERROR { "unrecognized field: 'ntoreturn'" };
+            QString const NTORETURN_ERROR { "ntoreturn" };
             bool const ntoreturnError { 
-                QString(ex.what()).compare(NTORETURN_ERROR, Qt::CaseInsensitive) == 0 
+                QString(ex.what()).indexOf(NTORETURN_ERROR, Qt::CaseInsensitive) >= 0 
             };
-            // If we have this DocumentDB specific error, try again
+            // If we have this error (from DocumentDB or more modern MongoDB versions), try again
             if (ntoreturnError && _dbclient) {
                 sendLog(this, LogEvent::RBM_ERROR, std::string(ex.what()));
                 try {
