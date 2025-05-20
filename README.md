@@ -1,3 +1,23 @@
+# FORK INFO - `ntoreturn` error patch
+
+_By David Trapp (CherryDT)_
+
+**This fork contains a minimal patch to fix the error `BSON field 'FindCommandRequest.ntoreturn' is an unknown field.` occuring during pagination with more modern MongoDB server versions.**
+
+For the changes done by this patch, see [here](https://github.com/CherryDT/robomongo/commit/1286e8d47fd27a79a4b5e182247cb7b60a47d704). Essentially, it expands an already-existing check for a similar error from DocumentDB to also match the error message for modern MongoDB servers, since the fix is the same.
+
+**How to use this fork:**
+
+I did _not_ fully rebuild the project because it was too much of a hassle, instead I directly patched the `robo3t.exe` file. **Windows only for now, sorry!** (If someone wants to properly build the project with this change, you are more than welcome to do so!)
+
+1. If you don't already have Robo 3T 1.4.4: Download the official installer from [here](https://github.com/Studio3T/robomongo/releases/tag/v1.4.4) and install it.
+2. Download the patched `robo3t.exe` file from [here](https://github.com/CherryDT/robomongo/releases/tag/v1.4.4-patched).
+3. Replace the original `robo3t.exe` file in the installation directory (likely `C:\Program Files\Robo 3T 1.4.4\robo3t.exe`) with the patched one.
+
+Cheers!
+
+---
+
 ## Important
 
 If you are using Studio 3T, please file any feedback on the [Studio 3T Feedback](https://studio3t.com/feedback/) page. If you are using Studio 3T Free, there is the [3T Community](https://community.studio3t.com/) for discussions with a [dedicated Free section](https://community.studio3t.com/c/studio-3t-free/13). Studio 3T does not monitor this repository for Studio 3T issues.
